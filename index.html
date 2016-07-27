@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="" >
+		<meta name="description" content="">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="yes" name="apple-touch-fullscreen" />
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true" />
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+        <link rel="apple-touch-icon" sizes="57x57" href="app/touch-icon-iphone-114.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="app/touch-icon-iphone-114.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="app/touch-icon-ipad-144.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="app/touch-icon-ipad-144.png" />
+		<meta content="telephone=no,email=no" name="format-detection" />
+		<link rel="shortcut icon" href="app/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="dialog.css">
+        <script src="flexible.js"></script>
+        <script src="flexible_css.js"></script>
+		<title>首页</title>
+	</head>
+	<body>
+        <div id="tip">提示框</div>
+        <div id="tip1">确定取消按钮对话框</div>
+        <div id="tip2">只显示对话框</div>
+        <div id="tip3">只显示确定按钮,自定义确定事件</div>
+        <div id="tip4">只显示取消按钮</div>
+        <div id="tip5">只显示取消按钮，自定义取消事件</div>
+        <div id="tip6">不显示底部</div>
+        <div id="tip7">不显示底部，不显示遮罩</div>
+        <div id="tip8">只显示取消按钮,遮罩不可以点击</div>
+        <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+        <script src="dialog.js"></script>
+        <script>
+            $("#tip").click(function(){
+                var a=dialog({
+                            type:2,
+                            text:'确定了',
+                            timer:3
+                        });
+                a.open();
+            });
+            $("#tip1").click(function(){
+                var a=dialog({
+                            type:1,
+                            text:'是否退出当前登录？'
+                        });
+                a.open();
+            });
+            $("#tip2").click(function(){
+                var a=dialog({
+                            type:1,
+                            text:'一边去吧！',
+                            showcancel:false
+                        });
+                a.open();
+            });
+            $("#tip3").click(function(){
+                var a=dialog({
+                            type:1,
+                            text:'约会?',
+                            showcancel:false,
+                            confirm:function(){
+                                alert('嗯嗯');
+                                a.closed();
+                            }
+                        });
+                a.open();
+            });
+            $("#tip4").click(function(){
+                var a=dialog({
+                            type:1,
+                            text:'取消吧',
+                            showconfirm:false,
+                        });
+                a.open();
+            });
+            $("#tip5").click(function(){
+                var a=dialog({
+                            type:1,
+                            text:'取消吧',
+                            showconfirm:false,
+                            cancel:function(){
+                                alert('我恨你');
+                            }
+                        });
+                a.open();
+            });
+            $("#tip6").click(function(){
+                var a=dialog({
+                            type:1,
+                            text:'取消吧',
+                            showFoot:false,
+                        });
+                a.open();
+            });
+            $("#tip7").click(function(){
+                var a=dialog({
+                            type:1,
+                            text:'取消吧',
+                            showFoot:false,
+                            overlay:false
+                        });
+                a.open();
+            });
+            $("#tip8").click(function(){
+                var a=dialog({
+                            type:1,
+                            text:'取消吧',
+                            showconfirm:false,
+                            overlayHide:false
+                        });
+                a.open();
+            });
+        </script>
+	</body>
+</html>

@@ -1,0 +1,136 @@
+@import "base/variable.scss";
+@import "base/function.scss";
+@keyframes fadeit{
+    0%{ opacity:1; }
+    100%{ opacity:0;}
+}
+.flex{
+    display: flex;
+    .flex_item{
+        flex: 1;
+    }
+}
+.flex_v_center{
+  align-items:center;
+}
+.dialog {
+    .dialog_loading{
+        margin-left:auto;
+        margin-right:auto;
+        width:px2rem(100);
+        height:px2rem(100);
+        margin:px2rem(30) auto;
+        position:relative;
+        &.bar div{
+            width: px2rem(10);
+            height:px2rem(30);
+            background: black;
+            position: absolute;
+            top: px2rem(35);
+            left: px2rem(45);
+            opacity:0.05;
+            animation: fadeit 1.1s linear infinite;
+            &:nth-child(1){
+                transform: rotate(0deg) translate(0,px2rem(30));
+                animation-delay:0.39s;
+            }
+            &:nth-child(2){
+               transform: rotate(45deg) translate(0, px2rem(30));
+                animation-delay:0.52s;
+            }
+            &:nth-child(3){
+               transform: rotate(90deg) translate(0, px2rem(30));
+                animation-delay:0.65s;
+            }
+            &:nth-child(4){
+               transform: rotate(135deg) translate(0,px2rem(30));
+                animation-delay:0.78s;
+            }
+            &:nth-child(5){
+               transform: rotate(180deg) translate(0,px2rem(30));
+                animation-delay:0.91s;
+            }
+            &:nth-child(6){
+               transform: rotate(225deg) translate(0,px2rem(30));
+                animation-delay:1.04s;
+            }
+            &:nth-child(7){
+               transform: rotate(270deg) translate(0,px2rem(30));
+                animation-delay:1.17s;
+            }
+            &:nth-child(8){
+                transform: rotate(315deg) translate(0,px2rem(30));
+                animation-delay:1.3s;
+            }
+        }
+    }
+    &.overlay{
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    .table {
+        display: table;
+        width: 100%;
+        height: 100%;
+        & .table_cell {
+            display: table-cell;
+            vertical-align:middle;
+        }
+    }
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    .table_cell{
+        vertical-align:middle;
+    }
+    @include px2px(font-size,34);
+    color:#2c3e50;
+    text-align:center;
+    .dialog_select{
+        background:#fff;
+        width:px2rem(540);
+        margin:0 auto;
+        border-radius:px2rem(30);
+        .dialog_detail{
+            line-height:1.5;
+            padding:px2rem(50) px2rem(20);
+            font-weight:bold;
+            small{
+                @include px2px(font-size,28);
+                font-weight:normal;
+            }
+        }
+    }
+    .dialog_btns{
+        border-top:solid 1px #e1e9f0;
+        .dialog_btn{
+            color:$blue;
+            line-height:px2rem(105);
+            font-weight:bold;
+            border-right: 1px solid #e1e9f0;
+            text-decoration:none;
+            &:last-child{
+                border:none;
+            }
+        }
+    }
+}
+.dialog_tips{
+    @include px2px(font-size,26);
+    text-align:center;
+    color:#fff;
+    display:inline-block;
+    border-radius:px2rem(10);
+    line-height:1.5;
+    padding:px2rem(20) px2rem(20);
+    background:rgba(0,0,0,.6);
+    position:fixed;
+    left:50%;
+    top:50%;
+    max-width:px2rem(500);
+    z-index: 9999;
+    word-break: break-all;
+    word-wrap: break-word;
+}

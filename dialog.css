@@ -1,0 +1,185 @@
+@charset "UTF-8";
+/*
+iphone3gs: 320px / 10 = 32px
+iphone4/5: 320px * 2 / 10 = 64px
+iphone6: 375px * 2 / 10 = 75px
+ */
+/*基准数也就是html,font-size有关:设计稿大小为640,转变就是拿设计稿的实际距离除以基准数*/
+/*除了字体或者特殊要求需要用到的*/
+/*针对字体*/
+/*图片媒体查询*/
+/*多行文字省略号*/
+/*多行文字省略号*/
+@-webkit-keyframes fadeit {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes fadeit {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .flex .flex_item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
+.flex_v_center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center; }
+
+.dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  font-size: 17px;
+  color: #2c3e50;
+  text-align: center; }
+  .dialog .dialog_loading {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1.3333333333rem;
+    height: 1.3333333333rem;
+    margin: 0.4rem auto;
+    position: relative; }
+    .dialog .dialog_loading.bar div {
+      width: 0.1333333333rem;
+      height: 0.4rem;
+      background: black;
+      position: absolute;
+      top: 0.4666666667rem;
+      left: 0.6rem;
+      opacity: 0.05;
+      -webkit-animation: fadeit 1.1s linear infinite;
+              animation: fadeit 1.1s linear infinite; }
+      .dialog .dialog_loading.bar div:nth-child(1) {
+        -webkit-transform: rotate(0deg) translate(0, 0.4rem);
+                transform: rotate(0deg) translate(0, 0.4rem);
+        -webkit-animation-delay: 0.39s;
+                animation-delay: 0.39s; }
+      .dialog .dialog_loading.bar div:nth-child(2) {
+        -webkit-transform: rotate(45deg) translate(0, 0.4rem);
+                transform: rotate(45deg) translate(0, 0.4rem);
+        -webkit-animation-delay: 0.52s;
+                animation-delay: 0.52s; }
+      .dialog .dialog_loading.bar div:nth-child(3) {
+        -webkit-transform: rotate(90deg) translate(0, 0.4rem);
+                transform: rotate(90deg) translate(0, 0.4rem);
+        -webkit-animation-delay: 0.65s;
+                animation-delay: 0.65s; }
+      .dialog .dialog_loading.bar div:nth-child(4) {
+        -webkit-transform: rotate(135deg) translate(0, 0.4rem);
+                transform: rotate(135deg) translate(0, 0.4rem);
+        -webkit-animation-delay: 0.78s;
+                animation-delay: 0.78s; }
+      .dialog .dialog_loading.bar div:nth-child(5) {
+        -webkit-transform: rotate(180deg) translate(0, 0.4rem);
+                transform: rotate(180deg) translate(0, 0.4rem);
+        -webkit-animation-delay: 0.91s;
+                animation-delay: 0.91s; }
+      .dialog .dialog_loading.bar div:nth-child(6) {
+        -webkit-transform: rotate(225deg) translate(0, 0.4rem);
+                transform: rotate(225deg) translate(0, 0.4rem);
+        -webkit-animation-delay: 1.04s;
+                animation-delay: 1.04s; }
+      .dialog .dialog_loading.bar div:nth-child(7) {
+        -webkit-transform: rotate(270deg) translate(0, 0.4rem);
+                transform: rotate(270deg) translate(0, 0.4rem);
+        -webkit-animation-delay: 1.17s;
+                animation-delay: 1.17s; }
+      .dialog .dialog_loading.bar div:nth-child(8) {
+        -webkit-transform: rotate(315deg) translate(0, 0.4rem);
+                transform: rotate(315deg) translate(0, 0.4rem);
+        -webkit-animation-delay: 1.3s;
+                animation-delay: 1.3s; }
+  .dialog.overlay {
+    background-color: rgba(0, 0, 0, 0.6); }
+  .dialog .table {
+    display: table;
+    width: 100%;
+    height: 100%; }
+    .dialog .table .table_cell {
+      display: table-cell;
+      vertical-align: middle; }
+  .dialog .table_cell {
+    vertical-align: middle; }
+  [data-dpr="2"] .dialog {
+    font-size: 34px; }
+  [data-dpr="2.5"] .dialog {
+    font-size: 43px; }
+  [data-dpr="2.75"] .dialog {
+    font-size: 47px; }
+  [data-dpr="3"] .dialog {
+    font-size: 51px; }
+  [data-dpr="4"] .dialog {
+    font-size: 68px; }
+  .dialog .dialog_select {
+    background: #fff;
+    width: 7.2rem;
+    margin: 0 auto;
+    border-radius: 0.4rem; }
+    .dialog .dialog_select .dialog_detail {
+      line-height: 1.5;
+      padding: 0.6666666667rem 0.2666666667rem;
+      font-weight: bold; }
+      .dialog .dialog_select .dialog_detail small {
+        font-size: 14px;
+        font-weight: normal; }
+        [data-dpr="2"] .dialog .dialog_select .dialog_detail small {
+          font-size: 28px; }
+        [data-dpr="2.5"] .dialog .dialog_select .dialog_detail small {
+          font-size: 35px; }
+        [data-dpr="2.75"] .dialog .dialog_select .dialog_detail small {
+          font-size: 39px; }
+        [data-dpr="3"] .dialog .dialog_select .dialog_detail small {
+          font-size: 42px; }
+        [data-dpr="4"] .dialog .dialog_select .dialog_detail small {
+          font-size: 56px; }
+  .dialog .dialog_btns {
+    border-top: solid 1px #e1e9f0; }
+    .dialog .dialog_btns .dialog_btn {
+      color: #007aff;
+      line-height: 1.4rem;
+      font-weight: bold;
+      border-right: 1px solid #e1e9f0;
+      text-decoration: none; }
+      .dialog .dialog_btns .dialog_btn:last-child {
+        border: none; }
+
+.dialog_tips {
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  border-radius: 0.1333333333rem;
+  line-height: 1.5;
+  padding: 0.2666666667rem 0.2666666667rem;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  max-width: 6.6666666667rem;
+  z-index: 9999;
+  word-break: break-all;
+  word-wrap: break-word; }
+  [data-dpr="2"] .dialog_tips {
+    font-size: 26px; }
+  [data-dpr="2.5"] .dialog_tips {
+    font-size: 33px; }
+  [data-dpr="2.75"] .dialog_tips {
+    font-size: 36px; }
+  [data-dpr="3"] .dialog_tips {
+    font-size: 39px; }
+  [data-dpr="4"] .dialog_tips {
+    font-size: 52px; }
